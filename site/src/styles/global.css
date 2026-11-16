@@ -51,7 +51,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-weight: 700;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--accent);
   margin-block-end: 1rem;
 }
 .h1, .h2, .h3 {
@@ -67,7 +67,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .lead { font-size: var(--fs-lead); line-height: 1.5; max-width: 46ch; }
 .signature {
   font-family: var(--font-display);
-  color: var(--orange);
+  color: var(--accent);
   letter-spacing: .01em;
 }
 /* Arabe : Cairo Black, pas d'espacement entre lettres (casse les ligatures) */
@@ -113,12 +113,12 @@ html[lang='ar'] .signature:lang(en) { font-family: var(--font-display); }
   background: transparent; border: 1px solid var(--line); border-radius: 999px;
   font-weight: 600; cursor: pointer; transition: border-color .2s, background-color .2s, color .2s;
 }
-.chip:hover { border-color: rgb(255 255 255 / .4); }
+.chip:hover { border-color: rgb(var(--tint) / .4); }
 .chip[aria-pressed='true'] { background: var(--orange); border-color: var(--orange); color: var(--on-orange); }
 
 .tag {
   display: inline-block; padding: .3rem .65rem; border-radius: 999px;
-  background: rgb(0 0 0 / .72); color: var(--text);
+  background: rgb(0 0 0 / .72); color: #f5f1ec;
   font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
   backdrop-filter: blur(6px);
 }
@@ -315,20 +315,20 @@ html[lang='ar'] .ucard__name { font-family: var(--font-ar); font-weight: 900; li
 .xp__body { position: relative; display: flex; flex-direction: column; gap: .9rem; flex: 1; padding: 1.5rem clamp(1.25rem, 2vw, 1.75rem) 1.75rem; }
 .xp__index { position: absolute; top: -2.1rem; inset-inline-end: 1.25rem; font-family: var(--font-display); font-size: 3.6rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--orange); }
 .xp__options { padding: 1rem; border-radius: var(--radius-sm); background: rgb(238 118 49 / .08); border: 1px solid rgb(238 118 49 / .3); }
-.xp__options-title { font-weight: 700; color: var(--orange); margin-block-end: .5rem; font-size: .95rem; }
+.xp__options-title { font-weight: 700; color: var(--accent); margin-block-end: .5rem; font-size: .95rem; }
 .xp__options .tri-list { font-size: .95rem; gap: .5rem; }
 .xp__meta { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem 1rem; padding-block: 1rem; border-block: 1px solid var(--line); }
 .xp__meta dt { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 html[lang='ar'] .xp__meta dt { letter-spacing: 0; font-size: .85rem; }
 .xp__meta dd { font-weight: 700; display: flex; align-items: center; gap: .5rem; }
 .level { display: inline-flex; gap: 3px; }
-.level i { width: 10px; height: 9px; background: rgb(255 255 255 / .2); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.level i { width: 10px; height: 9px; background: rgb(var(--tint) / .2); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 .level i.on { background: var(--orange); }
 .xp__route { color: var(--orange); width: 100%; max-width: 280px; }
 .xp__buy { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-block-start: auto; }
 .price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .1rem .4rem; }
 .price__n { font-family: var(--font-display); font-size: 2rem; line-height: 1; }
-.price__u { font-weight: 700; color: var(--orange); }
+.price__u { font-weight: 700; color: var(--accent); }
 .price__pp { flex-basis: 100%; font-size: .85rem; color: var(--muted); }
 /* Tablette : une carte par ligne, photo à côté du texte (évite une carte orpheline sur 2 colonnes) */
 @media (max-width: 899px) and (min-width: 600px) {
@@ -385,7 +385,7 @@ html[lang='ar'] .step__title { font-family: var(--font-ar); font-weight: 900; }
 
 /* ---------- Matériel ---------- */
 .gear__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
-.gear__hint { margin-block: 1.25rem 1.5rem; font-size: .95rem; color: var(--orange); }
+.gear__hint { margin-block: 1.25rem 1.5rem; font-size: .95rem; color: var(--accent); }
 .gear__list { display: grid; gap: .5rem; padding: 0; list-style: none; }
 .gitem {
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; width: 100%;
@@ -438,7 +438,7 @@ html[lang='ar'] .step__title { font-family: var(--font-ar); font-weight: 900; }
   font-weight: 700; font-size: 1.1rem;
 }
 .qa summary::-webkit-details-marker { display: none; }
-.qa summary:hover { color: var(--orange); }
+.qa summary:hover { color: var(--accent); }
 .qa__icon { position: relative; flex: none; width: 18px; height: 18px; }
 .qa__icon::before, .qa__icon::after { content: ''; position: absolute; inset: 8px 0 auto; height: 2px; background: var(--orange); transition: transform .3s var(--ease-out); }
 .qa__icon::after { transform: rotate(90deg); }
@@ -464,11 +464,11 @@ html[lang='ar'] .booking__cities strong { font-family: var(--font-ar); font-weig
 .field label, .field legend { font-weight: 700; font-size: .95rem; padding: 0; margin-block-end: .4rem; }
 .field input:not([type='checkbox'], [type='radio']), .field select, .field textarea {
   width: 100%; min-height: 50px; padding: .7rem .85rem;
-  background: var(--ink-2); border: 1px solid rgb(255 255 255 / .2); border-radius: var(--radius-sm);
+  background: var(--ink-2); border: 1px solid rgb(var(--tint) / .2); border-radius: var(--radius-sm);
   transition: border-color .2s, box-shadow .2s;
 }
 .field textarea { min-height: 96px; resize: vertical; }
-.field :is(input, select, textarea):hover { border-color: rgb(255 255 255 / .38); }
+.field :is(input, select, textarea):hover { border-color: rgb(var(--tint) / .38); }
 .field :is(input, select, textarea):focus-visible { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px rgb(238 118 49 / .35); }
 .field [aria-invalid='true'] { border-color: var(--danger); }
 .field__err { color: var(--danger); font-size: .9rem; }
@@ -488,9 +488,9 @@ html[lang='ar'] .booking__cities strong { font-family: var(--font-ar); font-weig
 .seg input:checked + span { background: var(--orange); border-color: var(--orange); color: var(--on-orange); }
 .seg input:focus-visible + span { outline: 3px solid var(--orange); outline-offset: 2px; }
 .form__foot { display: grid; gap: 1rem; margin-block-start: .5rem; }
-.estimate { min-height: 1.6em; font-weight: 700; color: var(--orange); }
+.estimate { min-height: 1.6em; font-weight: 700; color: var(--accent); }
 .form__status { color: var(--muted); font-size: .95rem; }
-.form__status a { color: var(--orange); }
+.form__status a { color: var(--accent); }
 @media (max-width: 899px) {
   .booking__grid { grid-template-columns: 1fr; }
   .booking__intro { position: static; }
@@ -528,7 +528,7 @@ html[lang='ar'] .band__text { font-family: var(--font-ar); font-weight: 900; lin
 
 /* ---------- 404 ---------- */
 .notfound { min-height: 100vh; display: grid; place-content: center; justify-items: center; gap: 2rem; padding: 2rem; text-align: center; background: var(--black); }
-.notfound a { color: var(--orange); }
+.notfound a { color: var(--accent); }
 
 /* ==========================================================================
    Mouvement — uniquement si JS actif et mouvement autorisé (classe html.motion)
@@ -585,3 +585,11 @@ html[lang='ar'] .band__text { font-family: var(--font-ar); font-weight: 900; lin
 /* Liens de navigation desktop : zone cliquable confortable */
 @media (min-width: 900px) { .header__nav ul a { display: inline-block; padding-block: .6rem; } .header__nav ul a::after { bottom: 2px; } }
 .xp__media picture, .frame picture, .mosaic__item picture { display: block; width: 100%; height: 100%; }
+
+/* ---------- Ajustements des sections claires ---------- */
+.theme-light .form { background: #fff; box-shadow: 0 24px 60px -40px rgb(23 18 14 / .35); }
+.theme-light .xp__card { background: #fff; box-shadow: 0 18px 40px -30px rgb(23 18 14 / .35); }
+.theme-light .route__start { fill: #fff; }
+.theme-light .xp__options { background: rgb(238 118 49 / .08); }
+.theme-light .mosaic__item { background: var(--ink-2); }
+.theme-light .chip[aria-pressed='true'] { color: var(--on-orange); }

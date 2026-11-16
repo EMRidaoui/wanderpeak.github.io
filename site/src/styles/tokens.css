@@ -8,14 +8,16 @@
 
   /* Couleurs */
   --black: #000;            /* fond du logo : le logo se fond parfaitement sur cette couleur */
-  --ink: #0b0806;           /* fond principal (noir chaud des visuels de marque) */
-  --ink-2: #140e0a;         /* sections alternées */
-  --panel: #24170e;         /* encadrés (cartes « promesses ») */
+  --ink: #16110d;           /* fond sombre principal (noir chaud, légèrement éclairci) */
+  --ink-2: #201913;         /* sections sombres alternées */
+  --panel: #2e2016;         /* encadrés (cartes « promesses ») */
   --line: rgb(255 255 255 / .12);
   --text: #f5f1ec;
   --muted: #b9b0a6;
   --orange: #ee7631;
   --orange-hover: #f48a4d;
+  --accent: var(--orange);  /* orange utilisé pour du TEXTE (assombri sur fond clair) */
+  --tint: 255 255 255;      /* teinte des bordures/voiles (canaux RGB) */
   --on-orange: #000;
   --danger: #ff7b72;
 
@@ -42,4 +44,23 @@
   /* Mouvement */
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --dur: .7s;
+}
+
+/**
+ * Thème clair — appliqué section par section (classe .theme-light) pour alterner
+ * sections sombres (identité, logo sur noir) et sections claires (contenu).
+ * Fond crème repris de l'ancien site (#faf7f3). Orange de texte assombri pour rester lisible (≥ 4,5:1).
+ */
+.theme-light {
+  color-scheme: light;
+  --ink: #f8f3ec;
+  --ink-2: #efe6da;
+  --panel: #fff;
+  --line: rgb(23 18 14 / .14);
+  --text: #17120e;
+  --muted: #5d544b;
+  --accent: #b2480b;
+  --tint: 23 18 14;
+  background: var(--ink);
+  color: var(--text);
 }

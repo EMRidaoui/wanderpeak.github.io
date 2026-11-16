@@ -8,7 +8,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = getDict(lang);
 ---
-<section class="section gallery" aria-labelledby="gallery-title">
+<section class="section gallery theme-light" aria-labelledby="gallery-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow" data-reveal>{t.gallery.eyebrow}</p>

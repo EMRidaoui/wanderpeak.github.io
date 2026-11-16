@@ -5,7 +5,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = getDict(lang);
 ---
-<section class="section steps" aria-labelledby="steps-title">
+<section class="section steps theme-light" aria-labelledby="steps-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow" data-reveal>{t.steps.eyebrow}</p>

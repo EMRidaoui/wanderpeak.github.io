@@ -7,7 +7,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = getDict(lang);
 ---
-<section class="section manifesto" id="about" aria-labelledby="about-title">
+<section class="section manifesto theme-light" id="about" aria-labelledby="about-title">
   <div class="wrap manifesto__grid">
     <figure class="frame manifesto__ph" data-reveal="clip">
       <Picture src={photo('manifesto-shadows')} alt={t.alt['manifesto-shadows']} widths={[480, 800, 1100]}
