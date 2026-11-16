@@ -9,8 +9,8 @@ export const GALLERY: { photo: string; wide?: boolean; tall?: boolean; focus?: s
   { photo: 'g-welcome-arch' },
   { photo: 'g-cairn-river' },
   { photo: 'g-mint-tea' },
-  { photo: 'g-meadow-stream', wide: true, focus: '50% 60%' },
-  { photo: 'g-mountain-refuge' },
+  { photo: 'g-meadow-stream', wide: true, focus: '50% 88%' },
+  { photo: 'g-mountain-refuge', wide: true, focus: '50% 70%' },
 ];
 
 /**

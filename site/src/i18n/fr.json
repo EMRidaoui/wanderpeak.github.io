@@ -57,7 +57,7 @@
   "experiences": {
     "eyebrow": "Nos expériences",
     "title": "Où on vous emmène.",
-    "lead": "De 800 à 1 800 MAD par personne.",
+    "lead": "De 800 à 1 800 MAD par personne (prix indicatifs).",
     "filterLabel": "Filtrer par univers",
     "all": "Toutes",
     "level": "Niveau",
@@ -89,7 +89,8 @@
         "name": "M'Goun",
         "summary": "Un sommet du Haut Atlas à plus de 4 000 m, en trois jours de marche et deux nuits sous tente."
       }
-    }
+    },
+    "indicative": "Prix indicatif"
   },
   "promises": {
     "eyebrow": "À chaque voyage",
@@ -169,7 +170,7 @@
       },
       {
         "q": "Combien ça coûte ?",
-        "a": "De 800 MAD (Imsfrane) à 1 800 MAD (M'Goun) par personne. Le prix de chaque expérience est indiqué sur sa fiche."
+        "a": "De 800 MAD (Imsfrane) à 1 800 MAD (M'Goun) par personne. Le prix de chaque expérience est indiqué sur sa fiche. Ces prix sont indicatifs et peuvent évoluer."
       },
       {
         "q": "Je n'ai pas de matériel, comment faire ?",

@@ -82,7 +82,7 @@ const e_t = t.experiences;
                   <p class="price">
                     <span class="price__n num">{num(x.price, lang)}</span>
                     <span class="price__u">{t.units.mad}</span>
-                    <span class="price__pp">{e_t.perPerson}</span>
+                    <span class="price__pp">{e_t.perPerson} · {e_t.indicative}</span>
                   </p>
                   <a class="btn" href="#book" data-book={x.id}>{e_t.book}<span class="sr-only"> — {it.name}</span></a>
                 </div>

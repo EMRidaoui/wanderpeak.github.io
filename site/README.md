@@ -75,10 +75,10 @@ Note : un `robots.txt` placé sous un sous-chemin (`/wanderpeak.github.io/robots
 
 ## À fournir ou valider avant la mise en ligne
 
-1. **Numéro WhatsApp** (`src/config/site.ts`). En attendant, le formulaire ouvre WhatsApp sans destinataire.
+1. ~~Numéro WhatsApp~~ : renseigné (+212 688 577 939), modifiable dans `src/config/site.ts`.
 2. **Photos des expériences.** Les photos d'Imsfrane (cascade et gorges), du Toubkal et du M'Goun ont été choisies d'après leur contenu visible : vérifier qu'elles correspondent bien à chaque lieu.
 3. **Textes en darija** : relecture par une personne native.
-4. Prix et durées actuels (repris de l'ancien site). Le prix d'Imsfrane s'applique-t-il aux deux formules ?
+4. Prix et durées : **indicatifs** (affichés comme tels sur le site), à ajuster dans `src/data/experiences.ts`.
 5. Ce qui est inclus (transport, repas, guide), conditions d'annulation, taille des groupes, encadrement.
 6. Contenu propre à l'univers **Échappée** (aujourd'hui seule Imsfrane y figure).
 7. Vrais avis clients, réseaux sociaux, mentions légales, fichier source du logo en SVG ou PNG transparent.

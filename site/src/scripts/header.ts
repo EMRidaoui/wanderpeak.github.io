@@ -14,6 +14,8 @@ export function initHeader(): void {
       ([entry]) => {
         const past = !entry.isIntersecting;
         header.classList.toggle('is-solid', past);
+        // En haut de page, aucun lien de section n'est actif
+        if (!past) header.querySelectorAll('[data-spy]').forEach((a) => a.removeAttribute('aria-current'));
         document.documentElement.classList.toggle('past-hero', past);
       },
       { rootMargin: '-64px 0px 0px 0px' },

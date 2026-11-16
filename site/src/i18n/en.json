@@ -57,7 +57,7 @@
   "experiences": {
     "eyebrow": "Our experiences",
     "title": "Where we take you.",
-    "lead": "From 800 to 1,800 MAD per person.",
+    "lead": "From 800 to 1,800 MAD per person (indicative prices).",
     "filterLabel": "Filter by universe",
     "all": "All",
     "level": "Level",
@@ -89,7 +89,8 @@
         "name": "M'Goun",
         "summary": "A High Atlas summit above 4,000 m, over three days of walking and two nights in tents."
       }
-    }
+    },
+    "indicative": "Indicative price"
   },
   "promises": {
     "eyebrow": "On every trip",
@@ -169,7 +170,7 @@
       },
       {
         "q": "How much does it cost?",
-        "a": "From 800 MAD (Imsfrane) to 1,800 MAD (M'Goun) per person. Each experience shows its price."
+        "a": "From 800 MAD (Imsfrane) to 1,800 MAD (M'Goun) per person. Each experience shows its price. These prices are indicative and may change."
       },
       {
         "q": "I don't have any gear, what can I do?",
