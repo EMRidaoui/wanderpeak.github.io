@@ -59,7 +59,7 @@
   --line: rgb(23 18 14 / .14);
   --text: #17120e;
   --muted: #5d544b;
-  --accent: #b2480b;
+  --accent: #a6420a;
   --tint: 23 18 14;
   background: var(--ink);
   color: var(--text);
