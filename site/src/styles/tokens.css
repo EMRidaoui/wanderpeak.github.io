@@ -1,0 +1,45 @@
+/**
+ * Design tokens — source unique des couleurs, typographies et espacements.
+ * L'orange #ee7631 est l'orange actuel du site (proche de celui du logo, #ed6a32).
+ * Règles de contraste : texte NOIR sur orange (6,8:1), orange sur noir — jamais de petit texte blanc sur orange.
+ */
+:root {
+  color-scheme: dark;
+
+  /* Couleurs */
+  --black: #000;            /* fond du logo : le logo se fond parfaitement sur cette couleur */
+  --ink: #0b0806;           /* fond principal (noir chaud des visuels de marque) */
+  --ink-2: #140e0a;         /* sections alternées */
+  --panel: #24170e;         /* encadrés (cartes « promesses ») */
+  --line: rgb(255 255 255 / .12);
+  --text: #f5f1ec;
+  --muted: #b9b0a6;
+  --orange: #ee7631;
+  --orange-hover: #f48a4d;
+  --on-orange: #000;
+  --danger: #ff7b72;
+
+  /* Typographie */
+  --font-display: 'Archivo Black', 'Cairo', Impact, sans-serif;
+  --font-body: 'Archivo', 'Cairo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-ar: 'Cairo', system-ui, sans-serif;
+
+  --fs-eyebrow: .8125rem;
+  --fs-body: clamp(1rem, .96rem + .2vw, 1.125rem);
+  --fs-lead: clamp(1.0625rem, 1rem + .45vw, 1.3rem);
+  --fs-h3: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --fs-h2: clamp(2rem, 1.5rem + 2.6vw, 3.5rem);
+  --fs-h1: clamp(2.75rem, 1.6rem + 4.4vw, 5.25rem);
+
+  /* Espacements */
+  --gutter: clamp(1rem, .6rem + 2vw, 2rem);
+  --section: clamp(4.5rem, 3rem + 6vw, 8.5rem);
+  --maxw: 1240px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --header-h: 64px;
+
+  /* Mouvement */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --dur: .7s;
+}

@@ -1,0 +1,42 @@
+---
+import Logo from './Logo.astro';
+import LangSwitch from './LangSwitch.astro';
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const links = [
+  ['#universes', t.nav.universes],
+  ['#experiences', t.nav.experiences],
+  ['#gear', t.nav.gear],
+  ['#faq', t.nav.faq],
+] as const;
+---
+<header class="header" data-header>
+  <div class="wrap header__in">
+    <a class="header__logo" href="#top" aria-label={t.a11y.home}>
+      <Logo width={88} eager />
+    </a>
+
+    <nav class="header__nav" id="site-nav" aria-label={t.a11y.menu} data-nav>
+      <ul>
+        {links.map(([href, label]) => <li><a href={href} data-spy={href}>{label}</a></li>)}
+      </ul>
+      <LangSwitch lang={lang} class="header__lang" />
+    </nav>
+
+    <a class="btn btn--sm header__cta" href="#book">{t.nav.book}</a>
+
+    <button class="header__burger" type="button" aria-expanded="false" aria-controls="site-nav" data-burger
+      data-label-open={t.a11y.menu} data-label-close={t.a11y.close}>
+      <span class="sr-only" data-burger-label>{t.a11y.menu}</span>
+      <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  import { initHeader } from '../scripts/header';
+  initHeader();
+</script>

@@ -1,0 +1,101 @@
+---
+import { Picture } from 'astro:assets';
+import RouteLine from './RouteLine.astro';
+import { photo } from '../data/photos';
+import { EXPERIENCES, LEVEL_RANK } from '../data/experiences';
+import { UNIVERSES } from '../data/universes';
+import { getDict, num } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const e_t = t.experiences;
+---
+<section class="section experiences" id="experiences" aria-labelledby="experiences-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow" data-reveal>{e_t.eyebrow}</p>
+      <h2 class="h2" id="experiences-title" data-reveal>{e_t.title}</h2>
+      <p class="lead muted" data-reveal>{e_t.lead}</p>
+    </header>
+
+    <div class="filters" role="group" aria-label={e_t.filterLabel} data-filters data-reveal>
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">{e_t.all}</button>
+      {UNIVERSES.map((u) => (
+        <button type="button" class="chip" data-filter={u.id} aria-pressed="false">{t.universes[u.id].name}</button>
+      ))}
+    </div>
+    <p class="sr-only" aria-live="polite" data-filter-status></p>
+
+    <ul class="xp-list" role="list" data-xp-list>
+      {EXPERIENCES.map((x, i) => {
+        const it = e_t.items[x.id] as { name: string; summary: string; options?: string[] };
+        return (
+          <li class="xp" data-xp data-universes={x.universes.join(' ')} id={`xp-${x.id}`}>
+            <article class="xp__card" aria-labelledby={`xp-${x.id}-name`}>
+              <figure class="xp__media" data-reveal="clip">
+                <Picture src={photo(x.photo)} alt={t.alt[x.photo as keyof typeof t.alt]} widths={[400, 640, 960]}
+                  sizes="(min-width: 1100px) 380px, (min-width: 700px) 45vw, 92vw" formats={['avif', 'webp']} quality={66}
+                  style={x.focus ? `object-position:${x.focus}` : undefined} />
+                <span class="xp__tags">
+                  {x.universes.map((u) => <span class="tag">{t.universes[u].name}</span>)}
+                </span>
+              </figure>
+
+              <div class="xp__body">
+                <span class="xp__index" aria-hidden="true">0{i + 1}</span>
+                <h3 class="h3" id={`xp-${x.id}-name`}>{it.name}</h3>
+                <p class="muted">{it.summary}</p>
+
+                {x.hasOptions && it.options && (
+                  <div class="xp__options">
+                    <p class="xp__options-title">{e_t.options}</p>
+                    <ul role="list" class="tri-list">
+                      {it.options.map((o) => <li>{o}</li>)}
+                    </ul>
+                  </div>
+                )}
+
+                <dl class="xp__meta">
+                  <div>
+                    <dt>{e_t.level}</dt>
+                    <dd>
+                      <span class="level" aria-hidden="true">
+                        {[1, 2, 3].map((n) => <i class:list={{ on: n <= LEVEL_RANK[x.level] }} />)}
+                      </span>
+                      {e_t.levels[x.level]}
+                    </dd>
+                  </div>
+                  {x.altitude && (
+                    <div>
+                      <dt>{e_t.altitude}</dt>
+                      <dd><span class="num" data-count={x.altitude}>{num(x.altitude, lang)}</span> {t.units.m}</dd>
+                    </div>
+                  )}
+                  <div><dt>{e_t.duration}</dt><dd>{t.units[x.duration]}</dd></div>
+                  <div><dt>{e_t.departure}</dt><dd>{t.cities.casablanca} · {t.cities.rabat}</dd></div>
+                </dl>
+
+                <RouteLine d={x.route} class="xp__route" />
+
+                <div class="xp__buy">
+                  <p class="price">
+                    <span class="price__n num">{num(x.price, lang)}</span>
+                    <span class="price__u">{t.units.mad}</span>
+                    <span class="price__pp">{e_t.perPerson}</span>
+                  </p>
+                  <a class="btn" href="#book" data-book={x.id}>{e_t.book}<span class="sr-only"> — {it.name}</span></a>
+                </div>
+              </div>
+            </article>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>
+
+<script>
+  import { initFilters } from '../scripts/filters';
+  initFilters();
+</script>

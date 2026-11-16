@@ -1,0 +1,20 @@
+---
+/**
+ * Motif « tracé de route » repris de la ligne du logo (cercle de départ → profil → flèche).
+ * Décoratif : se dessine à l'apparition (voir scripts/motion.ts).
+ */
+interface Props { d: string; class?: string }
+const { d, class: cls = '' } = Astro.props;
+// Position et angle de la flèche, calculés à partir des deux derniers points du tracé.
+const pts = [...d.matchAll(/(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)/g)].map((m) => [Number(m[1]), Number(m[2])]);
+const [x0, y0] = pts[0];
+const [xa, ya] = pts[pts.length - 2];
+const [xb, yb] = pts[pts.length - 1];
+const angle = (Math.atan2(yb - ya, xb - xa) * 180) / Math.PI;
+---
+<svg class:list={['route', cls]} viewBox="0 0 320 112" aria-hidden="true" focusable="false" data-route>
+  <line x1="0" x2="320" y1="106" y2="106" class="route__ground" />
+  <path class="route__line" pathLength="1" d={d} />
+  <circle cx={x0} cy={y0} r="6" class="route__start" />
+  <path class="route__head" d="M0 0 L-13 -7 L-13 7Z" transform={`translate(${xb} ${yb}) rotate(${angle.toFixed(1)})`} />
+</svg>

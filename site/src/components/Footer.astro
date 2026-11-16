@@ -1,0 +1,32 @@
+---
+import Logo from './Logo.astro';
+import LangSwitch from './LangSwitch.astro';
+import { getDict } from '../i18n';
+import { SITE, type Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div class="footer__brand">
+      <a href="#top" aria-label={t.a11y.home}><Logo width={132} /></a>
+      <p class="signature" lang="en"><span class="ltr">{t.footer.tagline}</span></p>
+    </div>
+    <div class="footer__col">
+      <p>{t.footer.departures}</p>
+      {SITE.whatsapp && (
+        <p>{t.footer.whatsapp} : <a href={`https://wa.me/${SITE.whatsapp}`} dir="ltr" rel="noopener" target="_blank">+{SITE.whatsapp}</a></p>
+      )}
+      {SITE.social.instagram && <p><a href={SITE.social.instagram} rel="noopener" target="_blank">Instagram</a></p>}
+    </div>
+    <div class="footer__col">
+      <p class="footer__label">{t.footer.languages}</p>
+      <LangSwitch lang={lang} />
+    </div>
+  </div>
+  <div class="wrap footer__legal">
+    <p>© {year} {SITE.name}. {t.footer.rights}</p>
+  </div>
+</footer>

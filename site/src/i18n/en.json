@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "title": "Wander Peak — Treks and adventures in the mountains of Morocco",
+    "description": "Wander Peak organises treks and adventures in the mountains of Morocco: Imsfrane, Toubkal, M'Goun. No experience needed, everything organised, departures from Casablanca and Rabat.",
+    "ogAlt": "Hikers walking in single file up a snowy mountain slope"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close menu",
+    "langGroup": "Choose language",
+    "home": "Wander Peak, back to top"
+  },
+  "nav": {
+    "universes": "Universes",
+    "experiences": "Experiences",
+    "gear": "Gear",
+    "faq": "FAQ",
+    "book": "Book"
+  },
+  "hero": {
+    "eyebrow": "Meet Wander Peak",
+    "title": "We take you to the peaks.",
+    "lead": "A travel agency organising treks and adventures in the mountains of Morocco.",
+    "ctaPrimary": "See the experiences",
+    "ctaSecondary": "Book on WhatsApp",
+    "departures": "Departures from Casablanca and Rabat",
+    "scroll": "Scroll"
+  },
+  "manifesto": {
+    "eyebrow": "Who we are",
+    "title": "The summit is better together.",
+    "p1": "Wander Peak is a Moroccan brand of travel, adventure and outdoor experiences.",
+    "p2": "Discover Morocco differently, break the routine, reconnect with nature and live authentic moments.",
+    "passion": "Most of all, we share the same passion."
+  },
+  "universes": {
+    "eyebrow": "Three ways to go",
+    "title": "Choose your universe.",
+    "lead": "Every experience belongs to a universe. Pick the one that matches your mood.",
+    "explore": "See the experiences",
+    "count_one": "{n} experience",
+    "count_other": "{n} experiences",
+    "aventure": {
+      "name": "Adventure",
+      "tagline": "Escape and discover."
+    },
+    "challenge": {
+      "name": "Challenge",
+      "tagline": "Push your limits."
+    },
+    "echappee": {
+      "name": "Getaway",
+      "tagline": "Disconnect, with more comfort."
+    }
+  },
+  "experiences": {
+    "eyebrow": "Our experiences",
+    "title": "Where we take you.",
+    "lead": "From 800 to 1,800 MAD per person.",
+    "filterLabel": "Filter by universe",
+    "all": "All",
+    "level": "Level",
+    "altitude": "Altitude",
+    "duration": "Duration",
+    "departure": "Departure",
+    "options": "Two ways to do it",
+    "perPerson": "per person",
+    "book": "Book",
+    "levels": {
+      "easy": "Easy",
+      "moderate": "Moderate",
+      "demanding": "Demanding"
+    },
+    "items": {
+      "imsfrane": {
+        "name": "Imsfrane",
+        "summary": "Two ways to experience Imsfrane, and a night in a tent.",
+        "options": [
+          "Climbing Mount Amsefrane.",
+          "A walk through the gorges and a trip to the cool, even icy, waterfalls: perfect for a summer swim."
+        ]
+      },
+      "toubkal": {
+        "name": "Toubkal",
+        "summary": "The highest peak in North Africa, climbed step by step with guidance designed for beginners."
+      },
+      "mgoun": {
+        "name": "M'Goun",
+        "summary": "A High Atlas summit above 4,000 m, over three days of walking and two nights in tents."
+      }
+    }
+  },
+  "promises": {
+    "eyebrow": "On every trip",
+    "title": "You walk, we handle the rest.",
+    "activities": [
+      "Trekking & hiking",
+      "Camping under the stars",
+      "Mountain villages & local culture",
+      "Photo stops & panoramas"
+    ],
+    "items": [
+      {
+        "title": "No experience needed",
+        "text": "First trek or not, you're welcome."
+      },
+      {
+        "title": "Everything organised",
+        "text": "Departure from Casablanca or Rabat: we take care of the organisation."
+      },
+      {
+        "title": "Low prices",
+        "text": "From 800 to 1,800 MAD per person."
+      }
+    ],
+    "slogan": "Small price, big peaks."
+  },
+  "steps": {
+    "eyebrow": "How it works",
+    "title": "Three steps to the summit.",
+    "items": [
+      {
+        "title": "Choose",
+        "text": "An experience, a date and the number of people."
+      },
+      {
+        "title": "Send",
+        "text": "Your request opens in WhatsApp, ready to send."
+      },
+      {
+        "title": "Go",
+        "text": "Departure from Casablanca or Rabat."
+      }
+    ]
+  },
+  "gear": {
+    "eyebrow": "Gear rental",
+    "title": "No gear? No problem.",
+    "lead": "Rent it with your trek, tents included.",
+    "hint": "Tap an item to add it to your booking request.",
+    "perDay": "/ day",
+    "added": "Added",
+    "items": {
+      "tent": "2-person tent",
+      "bag": "Sleeping bag",
+      "mat": "Sleeping mat",
+      "pack": "Backpack",
+      "poles": "Trekking poles",
+      "lamp": "Headlamp"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Moments",
+    "title": "Your passion, our peaks.",
+    "lead": "Photos taken on our trips."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Before you go.",
+    "items": [
+      {
+        "q": "Do I need mountain experience?",
+        "a": "No, no experience is needed. Toubkal, for example, is climbed step by step with guidance designed for beginners."
+      },
+      {
+        "q": "Where do trips leave from?",
+        "a": "Departures are from Casablanca and Rabat."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "From 800 MAD (Imsfrane) to 1,800 MAD (M'Goun) per person. Each experience shows its price."
+      },
+      {
+        "q": "I don't have any gear, what can I do?",
+        "a": "You can rent a tent, sleeping bag, mat, backpack, poles and headlamp with your trek, from 20 MAD per day."
+      },
+      {
+        "q": "How do I book?",
+        "a": "Fill in the booking form: your request opens in WhatsApp, ready to send."
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Booking",
+    "title": "Book your experience.",
+    "lead": "Fill in the form: your request opens in WhatsApp, ready to send.",
+    "departuresLabel": "Departures from",
+    "name": "Full name",
+    "phone": "Phone",
+    "experience": "Experience",
+    "pick": "Choose an experience",
+    "option": "Option",
+    "optionAscent": "Climbing Mount Amsefrane",
+    "optionGorges": "Gorges & waterfalls",
+    "date": "Preferred date",
+    "people": "Number of people",
+    "city": "Departure city",
+    "guideLang": "Guide language",
+    "gear": "Gear to rent",
+    "message": "Message (optional)",
+    "send": "Send on WhatsApp",
+    "required": "Please fill in this field.",
+    "estimate": "Estimate",
+    "gearPerDay": "Gear: {n} MAD / day",
+    "hello": "Hello Wander Peak, I would like to book an experience.",
+    "opening": "WhatsApp is opening with your request.",
+    "fallback": "Nothing opened? Click here."
+  },
+  "final": {
+    "text": "Most of all, we share the same passion.",
+    "cta": "Book"
+  },
+  "footer": {
+    "tagline": "Wander more. Worry less.",
+    "departures": "Departures from Casablanca and Rabat",
+    "whatsapp": "WhatsApp",
+    "languages": "Languages",
+    "rights": "All rights reserved."
+  },
+  "cities": {
+    "casablanca": "Casablanca",
+    "rabat": "Rabat"
+  },
+  "units": {
+    "mad": "MAD",
+    "m": "m",
+    "d2n1": "2 days, 1 night",
+    "d3n2": "3 days, 2 nights"
+  },
+  "notFound": {
+    "title": "Off trail.",
+    "text": "This page doesn't exist.",
+    "back": "Back to home"
+  },
+  "alt": {
+    "hero-snow-hikers": "Hikers walking in single file up a snowy mountain slope",
+    "univers-aventure-gorge-camp": "Wooden decoration hanging above a green valley surrounded by mountains",
+    "univers-challenge-snow-group": "Group of hikers on a snowy slope, hiking boots resting in the foreground",
+    "univers-echappee-tent-lake": "View of a lake from the entrance of a tent",
+    "exp-imsfrane-waterfall": "Waterfall and pool at the foot of ochre cliffs",
+    "exp-toubkal-snow-ridge": "Snowy ridges under a blue sky",
+    "exp-mgoun-snow-peaks": "Snowy peaks above the clouds",
+    "manifesto-shadows": "Shadows of two waving hikers cast on the snow",
+    "gear-hammock-tent": "Hammock and tent set up between trees",
+    "g-welcome-arch": "Wooden \"Welcome\" arch at the entrance of a camp",
+    "g-skewers-river": "Skewers ready to grill by a river, red cliffs behind",
+    "g-sheepdog": "Sheepdog sitting in the grass",
+    "g-moonlit-river": "River lit by the moon at night",
+    "g-meadow-stream": "Stream winding through a mountain meadow",
+    "g-meadow-rest": "Hiker lying in a meadow, sheep in the distance",
+    "g-cairn-river": "Stone cairn by a river at sunset",
+    "g-mint-tea": "Tea tray and a shared meal",
+    "g-cedar-camp": "Tents pitched under tall cedars",
+    "g-lake-panorama": "Panorama of a lake between hills",
+    "g-mountain-refuge": "Mountain refuge in the snow"
+  }
+}

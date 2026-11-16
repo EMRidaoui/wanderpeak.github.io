@@ -1,0 +1,46 @@
+---
+import { Picture } from 'astro:assets';
+import { photo } from '../data/photos';
+import { UNIVERSES } from '../data/universes';
+import { EXPERIENCES } from '../data/experiences';
+import { getDict, fill } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="section universes" id="universes" aria-labelledby="universes-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow" data-reveal>{t.universes.eyebrow}</p>
+      <h2 class="h2" id="universes-title" data-reveal>{t.universes.title}</h2>
+      <p class="lead muted" data-reveal>{t.universes.lead}</p>
+    </header>
+
+    <ul class="universes__list" role="list">
+      {UNIVERSES.map((u, i) => {
+        const n = EXPERIENCES.filter((e) => e.universes.includes(u.id)).length;
+        const u_t = t.universes[u.id];
+        return (
+          <li class="ucard" data-reveal style={`--i:${i}`}>
+            <a class="ucard__link" href="#experiences" data-filter-link={u.id}>
+              <Picture src={photo(u.photo)} alt="" widths={[400, 640, 900]}
+                sizes="(min-width: 900px) 33vw, 82vw" formats={['avif', 'webp']} quality={66}
+                class="ucard__img" style={u.focus ? `object-position:${u.focus}` : undefined} />
+              <span class="ucard__shade" aria-hidden="true"></span>
+              <span class="ucard__body">
+                <span class="ucard__index" aria-hidden="true">0{i + 1}</span>
+                <span class="ucard__name">{u_t.name}</span>
+                <span class="ucard__tagline">{u_t.tagline}</span>
+                <span class="ucard__foot">
+                  <span>{fill(n > 1 ? t.universes.count_other : t.universes.count_one, { n })}</span>
+                  <span class="ucard__cta">{t.universes.explore}<span class="arrow" aria-hidden="true">→</span></span>
+                </span>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

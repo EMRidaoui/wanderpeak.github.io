@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "title": "Wander Peak — Treks et aventures dans les montagnes du Maroc",
+    "description": "Wander Peak organise des treks et des aventures dans les montagnes du Maroc : Imsfrane, Toubkal, M'Goun. Aucune expérience requise, tout est organisé, départs depuis Casablanca et Rabat.",
+    "ogAlt": "Randonneurs en file dans la neige, sur une pente de montagne"
+  },
+  "a11y": {
+    "skip": "Aller au contenu",
+    "menu": "Menu",
+    "close": "Fermer le menu",
+    "langGroup": "Choisir la langue",
+    "home": "Wander Peak, retour en haut de page"
+  },
+  "nav": {
+    "universes": "Univers",
+    "experiences": "Expériences",
+    "gear": "Matériel",
+    "faq": "FAQ",
+    "book": "Réserver"
+  },
+  "hero": {
+    "eyebrow": "Rencontrez Wander Peak",
+    "title": "On vous emmène au sommet.",
+    "lead": "Agence de voyages spécialisée dans les treks et aventures dans les montagnes du Maroc.",
+    "ctaPrimary": "Voir les expériences",
+    "ctaSecondary": "Réserver sur WhatsApp",
+    "departures": "Départs depuis Casablanca et Rabat",
+    "scroll": "Faire défiler"
+  },
+  "manifesto": {
+    "eyebrow": "Qui sommes-nous",
+    "title": "Le sommet, c'est mieux à plusieurs.",
+    "p1": "Wander Peak est une marque marocaine d'expériences de voyage, d'aventure et de plein air.",
+    "p2": "Découvrir le Maroc autrement, sortir de la routine, se reconnecter à la nature et vivre des moments authentiques.",
+    "passion": "Surtout, on partage la même passion."
+  },
+  "universes": {
+    "eyebrow": "Trois façons de partir",
+    "title": "Choisissez votre univers.",
+    "lead": "Chaque expérience appartient à un univers. Choisissez selon votre envie du moment.",
+    "explore": "Voir les expériences",
+    "count_one": "{n} expérience",
+    "count_other": "{n} expériences",
+    "aventure": {
+      "name": "Aventure",
+      "tagline": "S'évader et découvrir."
+    },
+    "challenge": {
+      "name": "Challenge",
+      "tagline": "Se dépasser."
+    },
+    "echappee": {
+      "name": "Échappée",
+      "tagline": "Se déconnecter, avec plus de confort."
+    }
+  },
+  "experiences": {
+    "eyebrow": "Nos expériences",
+    "title": "Où on vous emmène.",
+    "lead": "De 800 à 1 800 MAD par personne.",
+    "filterLabel": "Filtrer par univers",
+    "all": "Toutes",
+    "level": "Niveau",
+    "altitude": "Altitude",
+    "duration": "Durée",
+    "departure": "Départ",
+    "options": "Deux formules au choix",
+    "perPerson": "par personne",
+    "book": "Réserver",
+    "levels": {
+      "easy": "Facile",
+      "moderate": "Modéré",
+      "demanding": "Soutenu"
+    },
+    "items": {
+      "imsfrane": {
+        "name": "Imsfrane",
+        "summary": "Deux façons de vivre Imsfrane, et une nuit sous tente.",
+        "options": [
+          "L'ascension du mont Amsefrane.",
+          "Une balade dans les gorges et une escapade aux chutes d'eau fraîche, voire glaciale : baignade idéale en été."
+        ]
+      },
+      "toubkal": {
+        "name": "Toubkal",
+        "summary": "Le plus haut sommet d'Afrique du Nord, abordé pas à pas avec un encadrement pensé pour les débutants."
+      },
+      "mgoun": {
+        "name": "M'Goun",
+        "summary": "Un sommet du Haut Atlas à plus de 4 000 m, en trois jours de marche et deux nuits sous tente."
+      }
+    }
+  },
+  "promises": {
+    "eyebrow": "À chaque voyage",
+    "title": "Vous marchez, on s'occupe du reste.",
+    "activities": [
+      "Trek & randonnée",
+      "Camping sous les étoiles",
+      "Villages de montagne & culture locale",
+      "Haltes photo & panoramas"
+    ],
+    "items": [
+      {
+        "title": "Aucune expérience requise",
+        "text": "Premier trek ou non, vous êtes les bienvenus."
+      },
+      {
+        "title": "Tout est organisé",
+        "text": "Départ depuis Casablanca ou Rabat : on s'occupe de l'organisation."
+      },
+      {
+        "title": "Petits prix",
+        "text": "De 800 à 1 800 MAD par personne."
+      }
+    ],
+    "slogan": "Small price, big peaks."
+  },
+  "steps": {
+    "eyebrow": "Comment ça marche",
+    "title": "Trois étapes jusqu'au sommet.",
+    "items": [
+      {
+        "title": "Choisissez",
+        "text": "Une expérience, une date et le nombre de personnes."
+      },
+      {
+        "title": "Envoyez",
+        "text": "Votre demande s'ouvre dans WhatsApp, prête à envoyer."
+      },
+      {
+        "title": "Partez",
+        "text": "Départ depuis Casablanca ou Rabat."
+      }
+    ]
+  },
+  "gear": {
+    "eyebrow": "Location de matériel",
+    "title": "Pas de matériel ? Pas de problème.",
+    "lead": "Louez-le avec votre trek, tentes comprises.",
+    "hint": "Touchez un article pour l'ajouter à votre demande de réservation.",
+    "perDay": "/ jour",
+    "added": "Ajouté",
+    "items": {
+      "tent": "Tente 2 places",
+      "bag": "Sac de couchage",
+      "mat": "Matelas de sol",
+      "pack": "Sac à dos",
+      "poles": "Bâtons de marche",
+      "lamp": "Lampe frontale"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Moments",
+    "title": "Your passion, our peaks.",
+    "lead": "Des photos prises pendant nos sorties."
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "title": "Avant de partir.",
+    "items": [
+      {
+        "q": "Faut-il de l'expérience en montagne ?",
+        "a": "Non, aucune expérience n'est requise. Le Toubkal, par exemple, est abordé pas à pas avec un encadrement pensé pour les débutants."
+      },
+      {
+        "q": "D'où partent les sorties ?",
+        "a": "Les départs se font depuis Casablanca et Rabat."
+      },
+      {
+        "q": "Combien ça coûte ?",
+        "a": "De 800 MAD (Imsfrane) à 1 800 MAD (M'Goun) par personne. Le prix de chaque expérience est indiqué sur sa fiche."
+      },
+      {
+        "q": "Je n'ai pas de matériel, comment faire ?",
+        "a": "Vous pouvez louer tente, sac de couchage, matelas, sac à dos, bâtons et lampe frontale avec votre trek, à partir de 20 MAD par jour."
+      },
+      {
+        "q": "Comment réserver ?",
+        "a": "Remplissez le formulaire de réservation : votre demande s'ouvre dans WhatsApp, prête à envoyer."
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Réservation",
+    "title": "Réservez votre expérience.",
+    "lead": "Remplissez le formulaire : votre demande s'ouvre dans WhatsApp, prête à envoyer.",
+    "departuresLabel": "Départs depuis",
+    "name": "Nom complet",
+    "phone": "Téléphone",
+    "experience": "Expérience",
+    "pick": "Choisir une expérience",
+    "option": "Formule",
+    "optionAscent": "Ascension du mont Amsefrane",
+    "optionGorges": "Gorges & chutes d'eau",
+    "date": "Date souhaitée",
+    "people": "Nombre de personnes",
+    "city": "Ville de départ",
+    "guideLang": "Langue de l'encadrement",
+    "gear": "Matériel à louer",
+    "message": "Message (facultatif)",
+    "send": "Envoyer sur WhatsApp",
+    "required": "Merci de remplir ce champ.",
+    "estimate": "Estimation",
+    "gearPerDay": "Matériel : {n} MAD / jour",
+    "hello": "Bonjour Wander Peak, je souhaite réserver une expérience.",
+    "opening": "WhatsApp s'ouvre avec votre demande.",
+    "fallback": "Rien ne s'ouvre ? Cliquez ici."
+  },
+  "final": {
+    "text": "Surtout, on partage la même passion.",
+    "cta": "Réserver"
+  },
+  "footer": {
+    "tagline": "Wander more. Worry less.",
+    "departures": "Départs depuis Casablanca et Rabat",
+    "whatsapp": "WhatsApp",
+    "languages": "Langues",
+    "rights": "Tous droits réservés."
+  },
+  "cities": {
+    "casablanca": "Casablanca",
+    "rabat": "Rabat"
+  },
+  "units": {
+    "mad": "MAD",
+    "m": "m",
+    "d2n1": "2 jours, 1 nuit",
+    "d3n2": "3 jours, 2 nuits"
+  },
+  "notFound": {
+    "title": "Hors sentier.",
+    "text": "Cette page n'existe pas.",
+    "back": "Retour à l'accueil"
+  },
+  "alt": {
+    "hero-snow-hikers": "Randonneurs en file dans la neige, sur une pente de montagne",
+    "univers-aventure-gorge-camp": "Décoration en bois suspendue au-dessus d'une vallée verte entourée de montagnes",
+    "univers-challenge-snow-group": "Groupe de randonneurs sur une pente enneigée, au premier plan des chaussures de marche au repos",
+    "univers-echappee-tent-lake": "Vue sur un lac depuis l'entrée d'une tente",
+    "exp-imsfrane-waterfall": "Chute d'eau et bassin au pied de falaises ocre",
+    "exp-toubkal-snow-ridge": "Crêtes enneigées sous un ciel bleu",
+    "exp-mgoun-snow-peaks": "Sommets enneigés au-dessus des nuages",
+    "manifesto-shadows": "Ombres de deux randonneurs qui saluent, projetées sur la neige",
+    "gear-hammock-tent": "Hamac et tente installés entre les arbres",
+    "g-welcome-arch": "Arche en bois « Welcome » à l'entrée d'un camp",
+    "g-skewers-river": "Brochettes prêtes à griller au bord d'une rivière, falaises rouges au fond",
+    "g-sheepdog": "Chien de berger assis dans l'herbe",
+    "g-moonlit-river": "Rivière éclairée par la lune la nuit",
+    "g-meadow-stream": "Ruisseau qui serpente dans une prairie de montagne",
+    "g-meadow-rest": "Randonneur allongé dans une prairie, moutons au loin",
+    "g-cairn-river": "Cairn de pierres au bord d'une rivière au coucher du soleil",
+    "g-mint-tea": "Plateau de thé et repas partagé",
+    "g-cedar-camp": "Tentes plantées sous de grands cèdres",
+    "g-lake-panorama": "Panorama d'un lac entre les collines",
+    "g-mountain-refuge": "Refuge de montagne dans la neige"
+  }
+}

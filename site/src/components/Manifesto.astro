@@ -1,0 +1,24 @@
+---
+import { Picture } from 'astro:assets';
+import { photo } from '../data/photos';
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="section manifesto" id="about" aria-labelledby="about-title">
+  <div class="wrap manifesto__grid">
+    <figure class="frame manifesto__ph" data-reveal="clip">
+      <Picture src={photo('manifesto-shadows')} alt={t.alt['manifesto-shadows']} widths={[480, 800, 1100]}
+        sizes="(min-width: 900px) 40vw, 90vw" formats={['avif', 'webp']} quality={68} />
+    </figure>
+    <div class="manifesto__body">
+      <p class="eyebrow" data-reveal>{t.manifesto.eyebrow}</p>
+      <h2 class="h2" id="about-title" data-reveal>{t.manifesto.title}</h2>
+      <p class="lead" data-reveal>{t.manifesto.p1}</p>
+      <p class="muted" data-reveal>{t.manifesto.p2}</p>
+      <p class="manifesto__passion" data-reveal>{t.manifesto.passion}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import { Picture } from 'astro:assets';
+import { photo } from '../data/photos';
+import { GEAR } from '../data/gear';
+import { getDict, num } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="section gear" id="gear" aria-labelledby="gear-title">
+  <div class="wrap gear__grid">
+    <div>
+      <p class="eyebrow" data-reveal>{t.gear.eyebrow}</p>
+      <h2 class="h2" id="gear-title" data-reveal>{t.gear.title}</h2>
+      <p class="lead muted" data-reveal>{t.gear.lead}</p>
+      <p class="gear__hint" data-reveal>{t.gear.hint}</p>
+      <ul class="gear__list" role="list" data-reveal>
+        {GEAR.map((g) => (
+          <li>
+            <button type="button" class="gitem" data-gear-toggle={g.id} aria-pressed="false">
+              <span class="gitem__check" aria-hidden="true"></span>
+              <span class="gitem__name">{t.gear.items[g.id]}</span>
+              <span class="gitem__price"><b class="num">{num(g.price, lang)}</b> {t.units.mad} {t.gear.perDay}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <figure class="frame gear__ph" data-reveal="clip">
+      <Picture src={photo('gear-hammock-tent')} alt={t.alt['gear-hammock-tent']} widths={[480, 800, 1100]}
+        sizes="(min-width: 900px) 40vw, 90vw" formats={['avif', 'webp']} quality={66} />
+    </figure>
+  </div>
+</section>

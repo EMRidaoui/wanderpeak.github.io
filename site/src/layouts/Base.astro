@@ -1,0 +1,101 @@
+---
+/**
+ * Layout de base : <html lang/dir>, SEO, hreflang, Open Graph, données structurées, polices.
+ */
+import '@fontsource/archivo/latin-400.css';
+import '@fontsource/archivo/latin-500.css';
+import '@fontsource/archivo/latin-700.css';
+import '@fontsource/archivo-black/latin-400.css';
+// Cairo (arabe) : grâce à `unicode-range`, le navigateur ne télécharge ces fichiers
+// que si la page affiche réellement des caractères arabes.
+import '@fontsource/cairo/arabic-400.css';
+import '@fontsource/cairo/arabic-600.css';
+import '@fontsource/cairo/arabic-900.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import { LANGS, LOCALES, SITE, type Lang } from '../config/site';
+import { getDict, dirOf, localeUrl } from '../i18n';
+import { photo } from '../data/photos';
+import { EXPERIENCES } from '../data/experiences';
+
+interface Props {
+  lang: Lang;
+  /** Page sans indexation (404) */
+  noindex?: boolean;
+  /** Ajoute les données structurées de la landing */
+  structured?: boolean;
+}
+const { lang, noindex = false, structured = false } = Astro.props;
+const t = getDict(lang);
+const dir = dirOf(lang);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const abs = (p: string) => new URL(p, Astro.site).href;
+const canonical = abs(localeUrl(lang));
+
+const og = await getImage({ src: photo('hero-snow-hikers'), width: 1200, height: 630, fit: 'cover', format: 'jpg', quality: 78 });
+
+const jsonLd = structured
+  ? {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'TravelAgency',
+          '@id': abs(`${base}/#agency`),
+          name: SITE.name,
+          url: abs(`${base}/`),
+          logo: abs(`${base}/icon-512.png`),
+          slogan: 'Wander more. Worry less.',
+          description: t.meta.description,
+          areaServed: { '@type': 'Country', name: 'Morocco' },
+          ...(SITE.whatsapp ? { telephone: `+${SITE.whatsapp}` } : {}),
+        },
+        ...EXPERIENCES.map((e) => ({
+          '@type': 'TouristTrip',
+          name: t.experiences.items[e.id].name,
+          description: t.experiences.items[e.id].summary,
+          provider: { '@id': abs(`${base}/#agency`) },
+          offers: { '@type': 'Offer', price: e.price, priceCurrency: 'MAD', url: abs(localeUrl(lang, '#book')) },
+        })),
+      ],
+    }
+  : null;
+---
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta name="robots" content={noindex ? 'noindex' : 'index, follow'} />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href={canonical} />
+    {!noindex && LANGS.map((l) => <link rel="alternate" hreflang={l} href={abs(localeUrl(l))} />)}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={abs(localeUrl('fr'))} />}
+
+    <link rel="icon" href={`${base}/favicon-32.png`} sizes="32x32" type="image/png" />
+    <link rel="icon" href={`${base}/icon-512.png`} sizes="512x512" type="image/png" />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={LOCALES[lang]} />
+    {LANGS.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={LOCALES[l]} />)}
+    <meta property="og:image" content={abs(og.src)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t.meta.ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.a11y.skip}</a>
+    <slot />
+  </body>
+</html>

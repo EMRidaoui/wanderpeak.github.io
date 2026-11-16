@@ -1,0 +1,29 @@
+---
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="section promises" aria-labelledby="promises-title">
+  <div class="wrap promises__grid">
+    <div>
+      <p class="eyebrow" data-reveal>{t.promises.eyebrow}</p>
+      <h2 class="h2" id="promises-title" data-reveal>{t.promises.title}</h2>
+      <ul class="tri-list promises__acts" role="list" data-reveal>
+        {t.promises.activities.map((a) => <li>{a}</li>)}
+      </ul>
+    </div>
+    <div>
+      <ul class="promises__boxes" role="list">
+        {t.promises.items.map((p, i) => (
+          <li class="pbox" data-reveal style={`--i:${i}`}>
+            <h3 class="pbox__title">{p.title}</h3>
+            <p class="muted">{p.text}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="signature promises__slogan" lang="en" data-reveal><span class="ltr">{t.promises.slogan}</span></p>
+    </div>
+  </div>
+</section>

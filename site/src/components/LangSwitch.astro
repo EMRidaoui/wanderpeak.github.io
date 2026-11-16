@@ -1,0 +1,22 @@
+---
+import { LANGS, LANG_LABELS, LANG_NAMES, type Lang } from '../config/site';
+import { localeUrl, getDict } from '../i18n';
+interface Props { lang: Lang; class?: string }
+const { lang, class: cls = '' } = Astro.props;
+const t = getDict(lang);
+---
+<nav class:list={['lang', cls]} aria-label={t.a11y.langGroup}>
+  {LANGS.map((l) => (
+    <a
+      href={localeUrl(l)}
+      lang={l}
+      hreflang={l}
+      data-lang-link={l}
+      aria-current={l === lang ? 'true' : undefined}
+      title={LANG_NAMES[l]}
+    >
+      <span aria-hidden="true">{LANG_LABELS[l]}</span>
+      <span class="sr-only">{LANG_NAMES[l]}</span>
+    </a>
+  ))}
+</nav>

@@ -1,0 +1,52 @@
+---
+/**
+ * Landing page — générée une fois par langue : /fr/, /en/, /ar/.
+ * L'ordre des sections est défini ici.
+ */
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Manifesto from '../../components/Manifesto.astro';
+import Universes from '../../components/Universes.astro';
+import Experiences from '../../components/Experiences.astro';
+import Promises from '../../components/Promises.astro';
+import Steps from '../../components/Steps.astro';
+import Gear from '../../components/Gear.astro';
+import Gallery from '../../components/Gallery.astro';
+import Reviews from '../../components/Reviews.astro';
+import Faq from '../../components/Faq.astro';
+import Booking from '../../components/Booking.astro';
+import FinalBand from '../../components/FinalBand.astro';
+import Footer from '../../components/Footer.astro';
+import MobileCta from '../../components/MobileCta.astro';
+import { LANGS, type Lang } from '../../config/site';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Lang;
+---
+<Base lang={lang} structured>
+  <Header lang={lang} />
+  <main id="main">
+    <Hero lang={lang} />
+    <Manifesto lang={lang} />
+    <Universes lang={lang} />
+    <Experiences lang={lang} />
+    <Promises lang={lang} />
+    <Steps lang={lang} />
+    <Gear lang={lang} />
+    <Gallery lang={lang} />
+    <Reviews lang={lang} />
+    <Faq lang={lang} />
+    <Booking lang={lang} />
+    <FinalBand lang={lang} />
+  </main>
+  <Footer lang={lang} />
+  <MobileCta lang={lang} />
+</Base>
+
+<script>
+  import { initMotion } from '../../scripts/motion';
+  initMotion();
+</script>

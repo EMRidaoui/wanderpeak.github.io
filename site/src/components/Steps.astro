@@ -1,0 +1,24 @@
+---
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="section steps" aria-labelledby="steps-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow" data-reveal>{t.steps.eyebrow}</p>
+      <h2 class="h2" id="steps-title" data-reveal>{t.steps.title}</h2>
+    </header>
+    <ol class="steps__list" role="list">
+      {t.steps.items.map((s, i) => (
+        <li class="step" data-reveal style={`--i:${i}`}>
+          <span class="step__n" aria-hidden="true">{i + 1}</span>
+          <h3 class="step__title">{s.title}</h3>
+          <p class="muted">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: t.faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<section class="section faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq__grid">
+    <header>
+      <p class="eyebrow" data-reveal>{t.faq.eyebrow}</p>
+      <h2 class="h2" id="faq-title" data-reveal>{t.faq.title}</h2>
+    </header>
+    <div class="faq__list" data-reveal>
+      {t.faq.items.map((f) => (
+        <details class="qa">
+          <summary><span>{f.q}</span><span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__a"><p>{f.a}</p></div>
+        </details>
+      ))}
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</section>

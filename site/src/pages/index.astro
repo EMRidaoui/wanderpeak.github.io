@@ -1,0 +1,34 @@
+---
+/**
+ * Racine du site : redirige vers la langue mémorisée, sinon celle du navigateur, sinon le français.
+ * Sans JavaScript : redirection <meta refresh> vers /fr/ + liens visibles.
+ */
+import { LANGS, LANG_NAMES } from '../config/site';
+import { localeUrl } from '../i18n';
+const fr = localeUrl('fr');
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wander Peak</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={new URL(fr, Astro.site).href} />
+    {LANGS.map((l) => <link rel="alternate" hreflang={l} href={new URL(localeUrl(l), Astro.site).href} />)}
+    <script is:inline define:vars={{ langs: LANGS, urls: Object.fromEntries(LANGS.map((l) => [l, localeUrl(l)])) }}>
+      var pick = null;
+      try { pick = localStorage.getItem('wp-lang'); } catch (e) {}
+      if (langs.indexOf(pick) < 0) {
+        var nav = (navigator.languages || [navigator.language || 'fr']).map(function (x) { return String(x).slice(0, 2); });
+        pick = nav.find(function (x) { return langs.indexOf(x) >= 0; }) || 'fr';
+      }
+      location.replace(urls[pick] + location.hash);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${fr}`} /></noscript>
+    <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#000;color:#f5f1ec;font:500 1.1rem system-ui,sans-serif}a{color:#ee7631;margin:0 .75rem}</style>
+  </head>
+  <body>
+    <p>{LANGS.map((l) => <a href={localeUrl(l)} lang={l}>{LANG_NAMES[l]}</a>)}</p>
+  </body>
+</html>

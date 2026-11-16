@@ -1,0 +1,13 @@
+---
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="band" aria-label={t.final.text}>
+  <div class="wrap band__in">
+    <p class="band__text" data-reveal>{t.final.text}</p>
+    <a class="btn btn--dark" href="#book" data-reveal>{t.final.cta}</a>
+  </div>
+</section>

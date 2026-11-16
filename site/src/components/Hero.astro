@@ -1,0 +1,43 @@
+---
+import { Picture } from 'astro:assets';
+import Logo from './Logo.astro';
+import { photo } from '../data/photos';
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__media" aria-hidden="true">
+    <Picture
+      src={photo('hero-snow-hikers')}
+      alt=""
+      widths={[640, 960, 1400, 1800]}
+      sizes="100vw"
+      formats={['avif', 'webp']}
+      quality={70}
+      loading="eager"
+      fetchpriority="high"
+      class="hero__img"
+    />
+  </div>
+
+  <div class="wrap hero__content">
+    <Logo width={360} blend eager class="hero__logo" />
+    <p class="eyebrow" data-hero-in>{t.hero.eyebrow}</p>
+    <h1 class="h1" id="hero-title" data-hero-in>{t.hero.title}</h1>
+    <p class="lead hero__lead" data-hero-in>{t.hero.lead}</p>
+    <p class="signature" lang="en" data-hero-in><span class="ltr">Wander more. Worry less.</span></p>
+    <div class="actions" data-hero-in>
+      <a class="btn" href="#experiences">{t.hero.ctaPrimary}</a>
+      <a class="btn btn--ghost" href="#book">{t.hero.ctaSecondary}</a>
+    </div>
+    <p class="hero__meta" data-hero-in>
+      <svg viewBox="0 0 12 12" aria-hidden="true" class="tri"><path d="M6 1 11 11H1Z" /></svg>
+      {t.hero.departures}
+    </p>
+  </div>
+
+  <a class="hero__scroll" href="#about" aria-label={t.hero.scroll}><span aria-hidden="true"></span></a>
+</section>

@@ -1,0 +1,24 @@
+---
+/**
+ * Avis clients — n'affiche RIEN tant que src/data/gallery.ts → REVIEWS est vide.
+ * (Les avis de l'ancienne page étaient des exemples fictifs et ont été retirés.)
+ */
+import { REVIEWS } from '../data/gallery';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+{REVIEWS.length > 0 && (
+  <section class="section reviews" id="reviews">
+    <div class="wrap">
+      <ul class="reviews__list" role="list">
+        {REVIEWS.map((r) => (
+          <li class="review" data-reveal>
+            <blockquote>{r.quote[lang]}</blockquote>
+            <p class="muted">{r.author} · {r.experience}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}

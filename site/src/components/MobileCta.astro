@@ -1,0 +1,10 @@
+---
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<div class="mcta" data-mcta aria-hidden="true">
+  <a class="btn btn--block" href="#book" tabindex="-1">{t.nav.book}</a>
+</div>

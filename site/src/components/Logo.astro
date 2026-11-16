@@ -1,0 +1,22 @@
+---
+/**
+ * Logo officiel Wander Peak — fichier d'origine, sans retouche.
+ * Il est sur fond noir : on l'affiche donc sur fond --black, ou avec
+ * `mix-blend-mode: screen` (variante `blend`) pour que le noir disparaisse sur une photo sombre.
+ */
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/logo.png';
+
+interface Props { width: number; blend?: boolean; class?: string; eager?: boolean }
+const { width, blend = false, class: cls = '', eager = false } = Astro.props;
+---
+<Image
+  src={logo}
+  alt="Wander Peak"
+  width={width}
+  densities={[1, 2]}
+  format="webp"
+  quality={90}
+  loading={eager ? 'eager' : 'lazy'}
+  class:list={['logo', cls, { 'logo--blend': blend }]}
+/>

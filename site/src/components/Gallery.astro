@@ -1,0 +1,29 @@
+---
+import { Picture } from 'astro:assets';
+import { photo } from '../data/photos';
+import { GALLERY } from '../data/gallery';
+import { getDict } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = getDict(lang);
+---
+<section class="section gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow" data-reveal>{t.gallery.eyebrow}</p>
+      <h2 class="h2" id="gallery-title" lang="en" data-reveal><span class="ltr">{t.gallery.title}</span></h2>
+      <p class="lead muted" data-reveal>{t.gallery.lead}</p>
+    </header>
+    <ul class="mosaic" role="list">
+      {GALLERY.map((g) => (
+        <li class:list={['mosaic__item', { 'is-wide': g.wide, 'is-tall': g.tall }]} data-reveal="clip">
+          <Picture src={photo(g.photo)} alt={t.alt[g.photo as keyof typeof t.alt]} widths={[360, 640, 960]}
+            sizes={g.wide ? '(min-width: 900px) 50vw, 100vw' : '(min-width: 900px) 25vw, 50vw'}
+            formats={['avif', 'webp']} quality={62}
+            style={g.focus ? `object-position:${g.focus}` : undefined} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
