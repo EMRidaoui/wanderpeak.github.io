@@ -1,0 +1,27 @@
+---
+/**
+ * Liste de matériel à cocher (nom + prix par jour).
+ * Utilisée deux fois : dans le formulaire (cases nommées « gear », envoyées avec la demande)
+ * et dans la modale de confirmation (cases miroirs, synchronisées par scripts/booking.ts).
+ */
+import { GEAR } from '../data/gear';
+import { getDict, num } from '../i18n';
+import type { Lang } from '../config/site';
+interface Props { lang: Lang; mirror?: boolean }
+const { lang, mirror = false } = Astro.props;
+const t = getDict(lang);
+---
+<ul class="gear__list" role="list">
+  {GEAR.map((g) => (
+    <li>
+      <label class="gitem">
+        {mirror
+          ? <input class="gitem__input" type="checkbox" value={g.id} data-gear-mirror />
+          : <input class="gitem__input" type="checkbox" name="gear" value={g.id} />}
+        <span class="gitem__check" aria-hidden="true"></span>
+        <span class="gitem__name">{t.gear.items[g.id]}</span>
+        <span class="gitem__price"><b class="num">{num(g.price, lang)}</b> {t.units.mad} {t.gear.perDay}</span>
+      </label>
+    </li>
+  ))}
+</ul>

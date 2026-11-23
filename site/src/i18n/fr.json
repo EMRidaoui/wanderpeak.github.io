@@ -14,7 +14,6 @@
   "nav": {
     "universes": "Univers",
     "experiences": "Expériences",
-    "gear": "Matériel",
     "faq": "FAQ",
     "book": "Réserver"
   },
@@ -139,9 +138,7 @@
     "eyebrow": "Location de matériel",
     "title": "Pas de matériel ? Pas de problème.",
     "lead": "Louez-le avec votre trek, tentes comprises.",
-    "hint": "Touchez un article pour l'ajouter à votre demande de réservation.",
     "perDay": "/ jour",
-    "added": "Ajouté",
     "items": {
       "tent": "Tente 2 places",
       "bag": "Sac de couchage",
@@ -206,7 +203,12 @@
     "gearPerDay": "Matériel : {n} MAD / jour",
     "hello": "Bonjour Wander Peak, je souhaite réserver une expérience.",
     "opening": "WhatsApp s'ouvre avec votre demande.",
-    "fallback": "Rien ne s'ouvre ? Cliquez ici."
+    "fallback": "Rien ne s'ouvre ? Cliquez ici.",
+    "modalTitle": "Vous avez tout le matériel ?",
+    "modalLead": "Vous n'avez rien ajouté. Besoin de quelque chose ? Cochez-le ici, on le prépare avec votre trek.",
+    "modalNone": "J'ai tout, envoyer",
+    "modalBack": "Revenir au formulaire",
+    "modalClose": "Fermer"
   },
   "final": {
     "text": "Surtout, on partage la même passion.",

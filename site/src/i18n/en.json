@@ -14,7 +14,6 @@
   "nav": {
     "universes": "Universes",
     "experiences": "Experiences",
-    "gear": "Gear",
     "faq": "FAQ",
     "book": "Book"
   },
@@ -139,9 +138,7 @@
     "eyebrow": "Gear rental",
     "title": "No gear? No problem.",
     "lead": "Rent it with your trek, tents included.",
-    "hint": "Tap an item to add it to your booking request.",
     "perDay": "/ day",
-    "added": "Added",
     "items": {
       "tent": "2-person tent",
       "bag": "Sleeping bag",
@@ -206,7 +203,12 @@
     "gearPerDay": "Gear: {n} MAD / day",
     "hello": "Hello Wander Peak, I would like to book an experience.",
     "opening": "WhatsApp is opening with your request.",
-    "fallback": "Nothing opened? Click here."
+    "fallback": "Nothing opened? Click here.",
+    "modalTitle": "Got all your gear?",
+    "modalLead": "You haven't added any gear. Need something? Tick it here and we'll have it ready with your trek.",
+    "modalNone": "I have everything, send",
+    "modalBack": "Back to the form",
+    "modalClose": "Close"
   },
   "final": {
     "text": "Most of all, we share the same passion.",
